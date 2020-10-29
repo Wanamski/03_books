@@ -33,34 +33,35 @@ public class Main{
             System.out.println("There are two cutpoints!");
         }
 
+        // Main.calcCut.... can be changed into calcCut.....
+        double cutPointValue1 = calcCutPointValue(varA, varB, varC, 1);
 
-        double cutPointValue1 = Main.calcCutPointValue(varA, varB, varC, 1);
-
-        double cutPointValue2 = Main.calcCutPointValue(varA, varB, varC, 2);
+        double cutPointValue2 = calcCutPointValue(varA, varB, varC, 2);
 
         System.out.println("Your solution is: " + cutPointValue1 + " and " + cutPointValue2);
 
 
+
     }
-    //checks, if there are 0, 1 or 2 Cutpoints
+    // checks, if there are 0, 1 or 2 Cutpoints
     private static int calcCutPointCount(int a, int b, int c){
 
-        int value = (b * b) - 4 * a * c;
+        int value = (b * b) - (4 * a * c); // Check with Wolfram Alpha if mathematically correct
 
         return value;
 
     }
-    //calculates the cupoints, where the parable cuts with the x axis
-    //operatorDecider: 1 = "+", else = "-"
+    // calculates the cupoints, where the parable cuts with the x axis
+    // operatorDecider: 1 = "+", else = "-"
     private static double calcCutPointValue(int a, int b, int c, int operatorDecider){
 
         if (operatorDecider == 1) {
 
-            double result1 = (-b + Math.sqrt((b * b) - (4 * a * c))) / 2 * a;
+            double result1 = (-b + Math.sqrt((b * b) - (4 * a * c))) / 2 * a; // Check if mathematically correct, split if needed
 
             return result1;
 
-        }else {
+        } else {
 
             double result2 = (-b - Math.sqrt((b * b) - (4 * a * c))) / 2 * a;
 
@@ -71,4 +72,8 @@ public class Main{
 
     }
 
+
+
 }
+
+//LGTM
