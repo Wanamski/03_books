@@ -51,19 +51,32 @@ public class Main{
         return value;
 
     }
-    // calculates the cupoints, where the parable cuts with the x axis
+    // calculates the cutpoints, where the parable cuts with the x axis
     // operatorDecider: 1 = "+", else = "-"
     private static double calcCutPointValue(int a, int b, int c, int operatorDecider){
 
+        // TODO: 30.10.2020 test this shit... 
         if (operatorDecider == 1) {
 
-            double result1 = (-b + Math.sqrt((b * b) - (4 * a * c))) / 2 * a; // Check if mathematically correct, split if needed
+            int partResult1 = (b * b) - (4 * a * c);
+
+            double partResult2 = Math.sqrt(partResult1);
+
+            double result1 = (-b + partResult2) / (2 * a);
+
+            // double result1 = (-b + Math.sqrt((b * b) - (4 * a * c))) / (2 * a); // Check if mathematically correct, split if needed
 
             return result1;
 
         } else {
 
-            double result2 = (-b - Math.sqrt((b * b) - (4 * a * c))) / 2 * a;
+            int partResult1 = (b * b) - (4 * a * c);
+
+            double partResult2 = Math.sqrt(partResult1);
+
+            double result2 = (-b - partResult2) / (2 * a);
+
+           // double result2 = (-b - Math.sqrt((b * b) - (4 * a * c))) / (2 * a);
 
             return result2;
 
