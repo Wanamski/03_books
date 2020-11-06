@@ -10,5 +10,11 @@ public class Main {
         // User soll Inhalte von Books/Author bekommen
 
 
+        Author tony = new Author("Tony", 35);
+        Book tonyBio = new Book("My life as an alcoholic", "Autobiography", tony);
+
+        System.out.println(tonyBio.getTitle()+ " , " + tonyBio.getGenre()+ " , " + tonyBio.getAuthor().getName());
+
+
     }
 }

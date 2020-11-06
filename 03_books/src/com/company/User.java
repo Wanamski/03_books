@@ -6,4 +6,11 @@ public class User {
 
    // myColleciton.push(Book myNewBook)  ??? zum hinzufügen zur collection
 
+   String name;
+   int age;
+   String mostLovedGenre;
+
+
+
+
 }
