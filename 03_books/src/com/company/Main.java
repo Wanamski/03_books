@@ -32,7 +32,10 @@ public class Main {
 
         User user = new User("XxPu55yD3stroy3r69xX", 23);
 
+        Collection test = new Collection(cocktails);
+        user.setMyCollection(test);
 
+        System.out.println(user.getMyCollection().listBooks());
 
 
     }

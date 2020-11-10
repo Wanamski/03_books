@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Book {
     // Sinnvolle Attribute erstellen
 
@@ -38,6 +41,15 @@ public class Book {
 
     public void setAuthor(Author author) {
         this.author = author;
+    }
+
+    // tests, if the title of the book equals given title
+    public boolean equalsTitle(String givenTitle){
+        if(this.getTitle() == givenTitle){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
