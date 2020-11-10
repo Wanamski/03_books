@@ -10,10 +10,29 @@ public class Main {
         // User soll Inhalte von Books/Author bekommen
 
 
-        Author tony = new Author("Tony", 35);
-        Book tonyBio = new Book("My life as an alcoholic", "Autobiography", tony);
+        Author tony = new Author("Tony Sanchez", 35);
+        Author alex = new Author("Alex Fisher", 27);
+        Author frank = new Author("Frank N. Stein", 69);
+        Author carl = new Author("Carl Marks", 33);
 
-        System.out.println(tonyBio.getTitle()+ " , " + tonyBio.getGenre()+ " , " + tonyBio.getAuthor().getName());
+
+        Book tonyBio = new Book("My life as an alcoholic", "Autobiography", tony);
+        Book cocktails = new Book("My top 100 cocktails", "Recipe", tony);
+
+        Book earnMoney = new Book("10 Ways to quickly earn money with potatoes!", "Finance", alex);
+        Book potatoStocks = new Book("How potato stocks will change your life!", "Finance", alex);
+
+        Book ghostInCastle = new Book("The ghost in castle Castlestein", "Horror", frank);
+        Book frankBio = new Book("I can see dead people", "Autobiography", frank);
+        Book zombieInBedroom = new Book("The zombie in my bedroom", "Horror", frank);
+
+        Book carlBio = new Book("The life of a regular person", "Autobiography", carl);
+        Book boo = new Book("BOO", "Horror", carl);
+
+
+        User user = new User("XxPu55yD3stroy3r69xX", 23);
+
+
 
 
     }

@@ -11,4 +11,8 @@ public class Collection {
     // Inhalte anzeigen
 
     // equals? for schleifen etc.
+
+
+
+
 }
