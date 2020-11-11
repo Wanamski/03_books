@@ -37,6 +37,10 @@ public class Main {
 
         System.out.println(user.getMyCollection().listBooks());
 
+        user.getMyCollection().addBook(potatoStocks);
+
+        System.out.println(user.getMyCollection().listBooks());
+
 
     }
 }

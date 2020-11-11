@@ -22,13 +22,21 @@ public class Collection {
 
     }
 
+    // adds a given book to the collection
+    // TODO: 11.11.2020 DEBUG!!!! 
+    public void addBook(Book book){
 
-    public void addBook(Book book, Collection collection){
+        Book [] books = new Book[this.books.length + 1];
 
-        // TODO: 10.11.2020 implement
+        for (int i = 0; i < this.books.length; i++) {
+            books[i] = this.books[i];
+        }
+
+        books[this.books.length] = book;
 
     }
 
+    // lists all books in the collection
     public String listBooks(){
 
         String list = " ";
