@@ -18,6 +18,16 @@ public class Book {
 
     }
 
+    // tests, if the title of the book equals given title
+    public boolean equalsTitle(String givenTitle){
+        // never compare strings with "=="! Use equals() instead.
+        // Only use "==" if you want to compare the references.
+        if(this.getTitle() == givenTitle){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public String getTitle() {
         return title;
@@ -41,15 +51,6 @@ public class Book {
 
     public void setAuthor(Author author) {
         this.author = author;
-    }
-
-    // tests, if the title of the book equals given title
-    public boolean equalsTitle(String givenTitle){
-        if(this.getTitle() == givenTitle){
-            return true;
-        }else{
-            return false;
-        }
     }
 
 }

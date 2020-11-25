@@ -2,9 +2,14 @@ package com.company;
 
 public class User {
 
-   private Collection myCollection;
+
 
    // myColleciton.push(Book myNewBook)  ??? zum hinzufügen zur collection
+
+   private Collection myCollection;
+   String name; // modifiers? (private, public, package, etc.)
+   int age;
+   String mostLovedGenre;
 
 
    User(String name, int age){
@@ -14,10 +19,6 @@ public class User {
 
    }
 
-
-   String name;
-   int age;
-   String mostLovedGenre;
 
    public Collection getMyCollection() {
       return myCollection;

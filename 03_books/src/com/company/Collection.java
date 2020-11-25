@@ -1,10 +1,8 @@
 package com.company;
 
-import java.util.Arrays;
-
 public class Collection {
 
-    private Book[] books = new Book[1];
+    private Book[] booksFromCollection = new Book[1];
 
     // Methoden zum Hinzufügen/Löschen von Büchern
 
@@ -17,8 +15,10 @@ public class Collection {
 
     Collection(Book openingBook){
 
-        Book[] books = {openingBook};
-        this.books[0] = books[0];
+//        Book[] books = {openingBook};
+//        this.books[0] = books[0];
+
+        this.booksFromCollection[0] = openingBook;
 
     }
 
@@ -26,13 +26,16 @@ public class Collection {
     // TODO: 11.11.2020 DEBUG!!!! 
     public void addBook(Book book){
 
-        Book [] books = new Book[this.books.length + 1];
+        Book [] newCollection = new Book[this.booksFromCollection.length + 1];
 
-        for (int i = 0; i < this.books.length; i++) {
-            books[i] = this.books[i];
+        for (int i = 0; i < this.booksFromCollection.length; i++) {
+            newCollection[i] = this.booksFromCollection[i];
         }
 
-        books[this.books.length] = book;
+        newCollection[this.booksFromCollection.length] = book;
+
+        // Missing: update booksFromCollection
+        // booksFromCollection = newCollection;
 
     }
 
@@ -41,8 +44,8 @@ public class Collection {
 
         String list = " ";
 
-        for (int i = 0; i < this.books.length; i++) {
-            list = list + "|" + this.books[i].getTitle() + "|";
+        for (int i = 0; i < this.booksFromCollection.length; i++) {
+            list = list + "|" + this.booksFromCollection[i].getTitle() + "|";
 
         }
 

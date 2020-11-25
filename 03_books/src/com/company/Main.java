@@ -35,9 +35,12 @@ public class Main {
         Collection test = new Collection(cocktails);
         user.setMyCollection(test);
 
+
         System.out.println(user.getMyCollection().listBooks());
 
         user.getMyCollection().addBook(potatoStocks);
+        user.getMyCollection().addBook(ghostInCastle);
+        user.getMyCollection().addBook(boo);
 
         System.out.println(user.getMyCollection().listBooks());
 
