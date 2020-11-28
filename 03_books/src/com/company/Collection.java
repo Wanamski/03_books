@@ -23,7 +23,6 @@ public class Collection {
     }
 
     // adds a given book to the collection
-    // TODO: 11.11.2020 DEBUG!!!! 
     public void addBook(Book book){
 
         Book [] newCollection = new Book[this.booksFromCollection.length + 1];
@@ -34,8 +33,7 @@ public class Collection {
 
         newCollection[this.booksFromCollection.length] = book;
 
-        // Missing: update booksFromCollection
-        // booksFromCollection = newCollection;
+        booksFromCollection = newCollection;
 
     }
 
@@ -45,7 +43,7 @@ public class Collection {
         String list = " ";
 
         for (int i = 0; i < this.booksFromCollection.length; i++) {
-            list = list + "|" + this.booksFromCollection[i].getTitle() + "|";
+            list = list + "\n" + this.booksFromCollection[i].getTitle() + "\n";
 
         }
 

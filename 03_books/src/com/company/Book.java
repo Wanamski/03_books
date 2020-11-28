@@ -18,11 +18,22 @@ public class Book {
 
     }
 
+    /*
+    @Override
+    public boolean equals(Object obj) {
+        if(this.getTitle().equals(obj)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    */
+
     // tests, if the title of the book equals given title
     public boolean equalsTitle(String givenTitle){
         // never compare strings with "=="! Use equals() instead.
         // Only use "==" if you want to compare the references.
-        if(this.getTitle() == givenTitle){
+        if(this.getTitle().equals(givenTitle)){
             return true;
         }else{
             return false;
