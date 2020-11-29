@@ -7,9 +7,9 @@ public class User {
    // myColleciton.push(Book myNewBook)  ??? zum hinzufügen zur collection
 
    private Collection myCollection;
-   String name; // modifiers? (private, public, package, etc.)
-   int age;
-   String mostLovedGenre;
+   private String name;
+   private int age;
+   private String mostLovedGenre;
 
 
    User(String name, int age){
@@ -24,8 +24,32 @@ public class User {
       return myCollection;
    }
 
+   public int getAge() {
+      return age;
+   }
+
+   public String getName() {
+      return name;
+   }
+
+   public String getMostLovedGenre() {
+      return mostLovedGenre;
+   }
+
    public void setMyCollection(Collection myCollection) {
       this.myCollection = myCollection;
+   }
+
+   public void setAge(int age) {
+      this.age = age;
+   }
+
+   public void setName(String name) {
+      this.name = name;
+   }
+
+   public void setMostLovedGenre(String mostLovedGenre) {
+      this.mostLovedGenre = mostLovedGenre;
    }
 
 

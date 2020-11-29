@@ -44,6 +44,17 @@ public class Main {
 
         System.out.println(user.getMyCollection().listBooks());
 
+        boolean testEquals = potatoStocks.equals(user.getMyCollection().getBookTitleOnPosition(1));
+        if (testEquals){
+            System.out.println("CHICKEN WINGS ARE THE BEST!!");
+        } else {
+            System.out.println("no i like magdunnal...");
+        }
+
+
+        user.getMyCollection().searchBookInCollection(ghostInCastle.getTitle());
+        user.getMyCollection().searchBookInCollection(tonyBio.getTitle());
+
 
     }
 }

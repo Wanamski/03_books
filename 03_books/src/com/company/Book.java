@@ -18,7 +18,7 @@ public class Book {
 
     }
 
-    /*
+    // tests, if the title of the book equals given title
     @Override
     public boolean equals(Object obj) {
         if(this.getTitle().equals(obj)){
@@ -27,7 +27,8 @@ public class Book {
             return false;
         }
     }
-    */
+
+    /*
 
     // tests, if the title of the book equals given title
     public boolean equalsTitle(String givenTitle){
@@ -39,6 +40,8 @@ public class Book {
             return false;
         }
     }
+
+     */
 
     public String getTitle() {
         return title;

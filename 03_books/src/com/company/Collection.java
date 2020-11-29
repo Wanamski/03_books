@@ -51,6 +51,36 @@ public class Collection {
 
     }
 
+    // searches for a booktitle in the array and prints the location of searched book
+    // might implement returning booksFromCollection[i] later if practical idk....
+    public void searchBookInCollection(String searchedBookTitle){
+
+        String output = " ";
+
+        for (int i = 0; i < booksFromCollection.length; i++) {
+
+            if (booksFromCollection[i].getTitle().equals(searchedBookTitle)){
+                output ="The book you seek exists on Position " + i + " of the Collection Array.";
+                break;
+            } else {
+                output ="The book you tried to find does not exist...";
+            }
+
+        }
+
+        System.out.println(output);
+
+    }
+
+
+
+
+
+    public String getBookTitleOnPosition(int i){
+
+        return booksFromCollection[i].getTitle();
+
+    }
 
 
 }
