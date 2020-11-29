@@ -23,7 +23,7 @@ public class Collection {
     }
 
     // adds a given book to the collection
-    public void addBook(Book book){
+    public void addBook(Book newBook){
 
         Book [] newCollection = new Book[this.booksFromCollection.length + 1];
 
@@ -31,7 +31,7 @@ public class Collection {
             newCollection[i] = this.booksFromCollection[i];
         }
 
-        newCollection[this.booksFromCollection.length] = book;
+        newCollection[this.booksFromCollection.length] = newBook;
 
         booksFromCollection = newCollection;
 

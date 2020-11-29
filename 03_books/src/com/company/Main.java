@@ -30,7 +30,7 @@ public class Main {
         Book boo = new Book("BOO", "Horror", carl);
 
 
-        User user = new User("XxPu55yD3stroy3r69xX", 23);
+        User user = new User("XxPu55yD35tr0y3r69xX", 23);
 
         Collection test = new Collection(cocktails);
         user.setMyCollection(test);
@@ -44,11 +44,11 @@ public class Main {
 
         System.out.println(user.getMyCollection().listBooks());
 
-        boolean testEquals = potatoStocks.equals(user.getMyCollection().getBookTitleOnPosition(1));
+        boolean testEquals = potatoStocks.getTitle().equals(user.getMyCollection().getBookTitleOnPosition(1));
         if (testEquals){
             System.out.println("CHICKEN WINGS ARE THE BEST!!");
         } else {
-            System.out.println("no i like magdunnal...");
+            System.out.println("no i like salad...");
         }
 
 

@@ -67,4 +67,8 @@ public class Book {
         this.author = author;
     }
 
+    public String getAuthorName() {
+        return this.author.getName();
+    }
+
 }
