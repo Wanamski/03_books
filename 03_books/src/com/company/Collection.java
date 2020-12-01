@@ -43,7 +43,7 @@ public class Collection {
         String list = " ";
 
         for (int i = 0; i < this.booksFromCollection.length; i++) {
-            list = list + "\n" + this.booksFromCollection[i].getTitle() + "\n";
+            list = list + "\n [" + i + "] " + this.booksFromCollection[i].getTitle();
 
         }
 
@@ -63,7 +63,7 @@ public class Collection {
                 output ="The book you seek exists on Position " + i + " of the Collection Array.";
                 break;
             } else {
-                output ="The book you tried to find does not exist...";
+                output ="The book you tried to find does not exist in this Collection...";
             }
 
         }
@@ -72,7 +72,9 @@ public class Collection {
 
     }
 
-
+    public Book getBookOnPosition(int i){
+        return this.booksFromCollection[i];
+    }
 
 
 
