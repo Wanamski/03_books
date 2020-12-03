@@ -25,6 +25,31 @@ public class DogList {
 
     }
 
+    public Dog findLastDogInList(){
+        if(root == null){
+            return null;
+        } else if (root.getNext() == null){
+            return root;
+        } else {
+            Dog nextDog = root.getNext();
+
+            while (hasNext(nextDog)){
+
+                nextDog = nextDog.getNext();
+
+            }
+
+            return nextDog;
+
+        }
+
+
+    }
+
+    public boolean hasNext(Dog dog){
+        return dog.getNext() != null;
+    }
+
 
 
 

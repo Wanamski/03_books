@@ -9,11 +9,6 @@ public class Main {
         Dog d3 = new Dog("Klaus", 6);
         Dog d4 = new Dog("Doggo", 1);
 
-
-        d1.setNext(d2);
-        d2.setNext(d3);
-        d3.setNext(d4);
-
         DogList myDogs = new DogList(d1);
         myDogs.addNewDogToList(d1, d2);
         myDogs.addNewDogToList(d2, d3);
