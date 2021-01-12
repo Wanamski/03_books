@@ -69,9 +69,10 @@ public class Main {
 
             System.out.println("\n What would you like to do?");
             System.out.println("(1) add a new book to my collection");
-            System.out.println("(2) list all books in my collection");
-            System.out.println("(3) list all books in the library");
-            System.out.println("(4) exit");
+            System.out.println("(2) delete a book from my collection");
+            System.out.println("(3) list all books in my collection");
+            System.out.println("(4) list all books in the library");
+            System.out.println("(5) exit");
 
             int userMenuDecision = scanner.nextInt();
 
@@ -87,15 +88,19 @@ public class Main {
 
             } else if (userMenuDecision == 2){
 
+                // TODO: 12.01.2021
+                
+            } else if (userMenuDecision == 3){
+
                 System.out.println("Here are all books, that are currently in your collection: \n");
                 System.out.println(user.getMyCollection().listBooks());
 
-            } else if (userMenuDecision == 3){
+            } else if (userMenuDecision == 4){
 
                 System.out.println("Here are all books available in our library: \n");
                 System.out.println(allBooks.listBooks());
 
-            } else if (userMenuDecision == 4){
+            } else if (userMenuDecision == 5){
                 break;
             }
 
@@ -103,7 +108,7 @@ public class Main {
 
         }
 
-        System.out.println("Thank you for visiting our library. \n We hope, we will see you again.");
+        System.out.println("Thank you for visiting our library. \n Have a great day!");
 
 
 

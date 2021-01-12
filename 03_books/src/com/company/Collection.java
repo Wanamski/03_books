@@ -37,6 +37,31 @@ public class Collection {
 
     }
 
+    // deletes a specific book from the collection
+    public void deleteBook(Book bookToDelete){
+
+        int locationOfBookToDelete = this.searchBookInCollection(bookToDelete) - 1;
+
+        if (locationOfBookToDelete == 0){
+            System.out.println("Sorry, but this book does not exist in your collection.");
+        } else {
+
+            Book [] newCollection =new Book[this.booksFromCollection.length - 1];
+
+            for (int i = 0; i < this.booksFromCollection.length; i++) {
+
+
+
+                }
+
+            }
+
+        }
+
+
+
+    
+
     // lists all books in the collection
     public String listBooks(){
 
@@ -51,24 +76,20 @@ public class Collection {
 
     }
 
-    // searches for a booktitle in the array and prints the location of searched book
-    // might implement returning booksFromCollection[i] later if practical idk....
-    public void searchBookInCollection(String searchedBookTitle){
-
-        String output = " ";
+    // searches for a book in the array and returns the location of searched book
+    // CAUTION!!: return value is the array location + 1!!!
+    // => if return value is 0, the searched book doesn't exist in the collection!!!
+    public int searchBookInCollection(Book searchedBook){
 
         for (int i = 0; i < booksFromCollection.length; i++) {
 
-            if (booksFromCollection[i].getTitle().equals(searchedBookTitle)){
-                output ="The book you seek exists on Position " + i + " of the Collection Array.";
-                break;
-            } else {
-                output ="The book you tried to find does not exist in this Collection...";
+            if (booksFromCollection[i].equals(searchedBook)){
+                return i + 1;
             }
 
         }
 
-        System.out.println(output);
+        return 0;
 
     }
 
