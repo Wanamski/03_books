@@ -76,7 +76,7 @@ public class Main {
 
             int userMenuDecision = scanner.nextInt();
 
-            if (userMenuDecision == 1){
+            if (userMenuDecision == 1){  // adding new book to collection
 
                 System.out.println("What book would you like to add to your collection?");
                 System.out.println(allBooks.listBooks() + "\n");
@@ -86,21 +86,29 @@ public class Main {
 
                 System.out.println("Okay, done. \"" + allBooks.getBookTitleOnPosition(bookPositionToAdd) + "\" is now added to your collection.");
 
-            } else if (userMenuDecision == 2){
+            } else if (userMenuDecision == 2){  // deleting book from collection
 
-                // TODO: 12.01.2021
-                
-            } else if (userMenuDecision == 3){
+                System.out.println("What book do you want to delete from your collection?");
+                System.out.println(user.getMyCollection().listBooks());
+
+                int bookPositionToDelete = scanner.nextInt();
+                Book bookToDelete = user.getMyCollection().getBookOnPosition(bookPositionToDelete);
+
+                user.getMyCollection().deleteBook(user.getMyCollection().getBookOnPosition(bookPositionToDelete));
+
+                System.out.println("Okay, \"" + bookToDelete.getTitle() + "\" has been deleted from your collection." );
+
+            } else if (userMenuDecision == 3){  // list all books in collection
 
                 System.out.println("Here are all books, that are currently in your collection: \n");
                 System.out.println(user.getMyCollection().listBooks());
 
-            } else if (userMenuDecision == 4){
+            } else if (userMenuDecision == 4){  // list all books in library
 
                 System.out.println("Here are all books available in our library: \n");
                 System.out.println(allBooks.listBooks());
 
-            } else if (userMenuDecision == 5){
+            } else if (userMenuDecision == 5){  // exit
                 break;
             }
 

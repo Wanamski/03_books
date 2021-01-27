@@ -50,17 +50,23 @@ public class Collection {
 
             for (int i = 0; i < this.booksFromCollection.length; i++) {
 
-
-
+                if (i < locationOfBookToDelete){
+                    newCollection[i] = booksFromCollection[i];
+                } else if ( i > locationOfBookToDelete){
+                    newCollection[i - 1] = booksFromCollection[i];
                 }
 
             }
 
+            booksFromCollection = newCollection;
+
         }
 
+    }
 
 
-    
+
+
 
     // lists all books in the collection
     public String listBooks(){
