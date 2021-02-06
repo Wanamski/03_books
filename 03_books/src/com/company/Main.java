@@ -112,45 +112,9 @@ public class Main {
                 break;
             }
 
-            //break; //for the moment to not get stuck in the loop..
-
         }
 
         System.out.println("Thank you for visiting our library. \n Have a great day!");
-
-
-
-        /*
-
-        User user = new User("XxPu55yD35tr0y3r69xX", 23);
-
-        Collection test = new Collection(cocktails);
-        user.setMyCollection(test);
-
-
-        System.out.println(user.getMyCollection().listBooks());
-
-        user.getMyCollection().addBook(potatoStocks);
-        user.getMyCollection().addBook(ghostInCastle);
-        user.getMyCollection().addBook(boo);
-
-        System.out.println(user.getMyCollection().listBooks());
-
-        boolean testEquals = potatoStocks.getTitle().equals(user.getMyCollection().getBookTitleOnPosition(1));
-        if (testEquals){
-            System.out.println("CHICKEN WINGS ARE THE BEST!!");
-        } else {
-            System.out.println("no i like salad...");
-        }
-
-
-        user.getMyCollection().searchBookInCollection(ghostInCastle.getTitle());
-        user.getMyCollection().searchBookInCollection(tonyBio.getTitle());
-
-         */
-
-
-
 
     }
 
