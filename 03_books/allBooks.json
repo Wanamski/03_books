@@ -1,0 +1,76 @@
+{
+  "booksFromCollection": [
+    {
+      "title": "My life as an alcoholic",
+      "genre": "Autobiography",
+      "author": {
+        "name": "Tony Sanchez",
+        "age": 35
+      }
+    },
+    {
+      "title": "My top 100 cocktails",
+      "genre": "Recipe",
+      "author": {
+        "name": "Tony Sanchez",
+        "age": 35
+      }
+    },
+    {
+      "title": "10 Ways to quickly earn money with potatoes!",
+      "genre": "Finance",
+      "author": {
+        "name": "Alex Fisher",
+        "age": 27
+      }
+    },
+    {
+      "title": "How potato stocks will change your life!",
+      "genre": "Finance",
+      "author": {
+        "name": "Alex Fisher",
+        "age": 27
+      }
+    },
+    {
+      "title": "The ghost in castle Castlestein",
+      "genre": "Horror",
+      "author": {
+        "name": "Frank N. Stein",
+        "age": 69
+      }
+    },
+    {
+      "title": "I can see dead people",
+      "genre": "Autobiography",
+      "author": {
+        "name": "Frank N. Stein",
+        "age": 69
+      }
+    },
+    {
+      "title": "The zombie in my bedroom",
+      "genre": "Horror",
+      "author": {
+        "name": "Frank N. Stein",
+        "age": 69
+      }
+    },
+    {
+      "title": "The life of a regular person",
+      "genre": "Autobiography",
+      "author": {
+        "name": "Carl Marks",
+        "age": 33
+      }
+    },
+    {
+      "title": "BOO",
+      "genre": "Horror",
+      "author": {
+        "name": "Carl Marks",
+        "age": 33
+      }
+    }
+  ]
+}

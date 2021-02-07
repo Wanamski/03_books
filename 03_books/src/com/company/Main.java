@@ -1,5 +1,11 @@
 package com.company;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Main {
@@ -11,7 +17,16 @@ public class Main {
         // User soll Books hinzufügen können, löschen etc.
         // User soll Inhalte von Books/Author bekommen
 
+        // TODO: 07.02.2021 create userprofiles 
+
+        Gson gson = new Gson();
+
+
+
         // just some books for the start.. maybe implement external saving for the books later
+
+        /*
+
         Author tony = new Author("Tony Sanchez", 35);
         Author alex = new Author("Alex Fisher", 27);
         Author frank = new Author("Frank N. Stein", 69);
@@ -30,8 +45,10 @@ public class Main {
 
         Book carlBio = new Book("The life of a regular person", "Autobiography", carl);
         Book boo = new Book("BOO", "Horror", carl);
+        
+         */
 
-
+        /*
 
         // Collection to list all existing books... ugly AF, but for now it does it's purpose..
         Collection allBooks = new Collection(tonyBio);
@@ -43,6 +60,14 @@ public class Main {
         allBooks.addBook(zombieInBedroom);
         allBooks.addBook(carlBio);
         allBooks.addBook(boo);
+
+         */
+
+        // loading allBooks Collection
+        String allBooksJson = loadJsonFromFileToString("allBooks.json");
+        Collection allBooks = gson.fromJson(allBooksJson, Collection.class);
+
+
 
 
         // creating new profile
@@ -114,8 +139,49 @@ public class Main {
 
         }
 
+        // Saving the allBooks Collection to json file
+        saveObjectToJsonFile(allBooks, "allBooks.json");
+
         System.out.println("Thank you for visiting our library. \n Have a great day!");
 
+    }
+
+    // save existing Object to external json file
+    static void saveObjectToJsonFile(Object object, String fileName){
+        System.out.println("Saving files...");
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String jsonToSave = gson.toJson(object);
+
+        try{
+            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+            writer.println(jsonToSave);
+            writer.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        System.out.println("Files saved.");
+
+    }
+
+    // load existing external json file to String
+    static String loadJsonFromFileToString(String pathname){
+        String jsonToReturn = "";
+
+        try{
+            File fileToRead = new File(pathname);
+            Scanner reader = new Scanner(fileToRead);
+
+            while (reader.hasNextLine()){
+                jsonToReturn = jsonToReturn + reader.nextLine();
+            }
+        }catch(FileNotFoundException e){
+            System.out.println(pathname + " was not found.");
+            e.printStackTrace();
+        }
+
+        return jsonToReturn;
     }
 
 }
