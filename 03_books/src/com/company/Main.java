@@ -20,6 +20,7 @@ public class Main {
         // TODO: 07.02.2021 create userprofiles 
 
         Gson gson = new Gson();
+        Scanner scanner = new Scanner(System.in);
 
 
 
@@ -67,27 +68,53 @@ public class Main {
         String allBooksJson = loadJsonFromFileToString("allBooks.json");
         Collection allBooks = gson.fromJson(allBooksJson, Collection.class);
 
+        User user = new User();
+
+        System.out.println("Welcome to the Library. Do you already have an account or do you want to register?");
+        System.out.println("[1] Register");
+        System.out.println("[2] Login");
+        int userInput = scanner.nextInt();
+
+        if (userInput == 1){
+            // creating new profile
+            System.out.println("What is your name?");
+            String userName = scanner.next();
+            System.out.println("What is your age?");
+            int userAge = scanner.nextInt();
+
+            user.setName(userName);
+            user.setAge(userAge);
+
+            System.out.println("Hello " + user.getName() + ".");
+            System.out.println("To open your collection, we need you to pick one of the given books to add to your collection");
+            System.out.println("Just type the number of the book you want to add to your collection.");
+            System.out.println(allBooks.listBooks() + "\n");
+
+            Collection userCollection = new Collection(allBooks.getBookOnPosition(scanner.nextInt()));
+            user.setMyCollection(userCollection);
+
+            System.out.println("Thank you. Now your profile is ready to be used. \n");
+            System.out.println("You can log in next time using your name.");
+
+        }else if(userInput == 2){
+
+            // logging into an existing account
+            System.out.println("Please enter your Name to log in: ");
+            String userProfileLocation = "user_" + scanner.next() + ".json";
+
+            String userJson = loadJsonFromFileToString(userProfileLocation);
+            user = gson.fromJson(userJson, User.class);
+
+            System.out.println("Welcome back, " + user.getName() + "!");
+
+        } else {
+
+            System.out.println("invalid input..");
+            // TODO: 08.02.2021  
+        }
 
 
 
-        // creating new profile
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Library. What is your name?");
-        String userName = scanner.next();
-        System.out.println("What is your age?");
-        int userAge = scanner.nextInt();
-
-        User user = new User(userName, userAge);
-
-        System.out.println("Hello " + user.getName() + ".");
-        System.out.println("To open your collection, we need you to pick one of the given books to add to your collection");
-        System.out.println("Just type the number of the book you want to add to your collection.");
-        System.out.println(allBooks.listBooks() + "\n");
-
-        Collection userCollection = new Collection(allBooks.getBookOnPosition(scanner.nextInt()));
-        user.setMyCollection(userCollection);
-
-        System.out.println("Thank you. Now your profile is ready to be used. \n");
 
 
         while (true){
@@ -134,13 +161,23 @@ public class Main {
                 System.out.println(allBooks.listBooks());
 
             } else if (userMenuDecision == 5){  // exit
+
                 break;
+
+            } else {
+
+                System.out.println("invalid input.. Please use one of the given options.");
+
             }
 
         }
 
-        // Saving the allBooks Collection to json file
+        // saving the allBooks Collection to json file
         saveObjectToJsonFile(allBooks, "allBooks.json");
+
+        // saving used user profile
+        String userProfileJsonFileName = "user_" + user.getName() + ".json";
+        saveObjectToJsonFile(user, userProfileJsonFileName);
 
         System.out.println("Thank you for visiting our library. \n Have a great day!");
 
@@ -148,7 +185,7 @@ public class Main {
 
     // save existing Object to external json file
     static void saveObjectToJsonFile(Object object, String fileName){
-        System.out.println("Saving files...");
+        System.out.println("Saving data...");
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonToSave = gson.toJson(object);
@@ -161,7 +198,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        System.out.println("Files saved.");
+        System.out.println("Data saved.");
 
     }
 

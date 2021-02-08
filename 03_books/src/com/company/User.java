@@ -19,6 +19,10 @@ public class User {
 
    }
 
+   User(){
+
+   }
+
 
    public Collection getMyCollection() {
       return myCollection;
