@@ -17,8 +17,6 @@ public class Main {
         // User soll Books hinzufügen können, löschen etc.
         // User soll Inhalte von Books/Author bekommen
 
-        // TODO: 07.02.2021 create userprofiles 
-
         Gson gson = new Gson();
         Scanner scanner = new Scanner(System.in);
 
@@ -110,7 +108,7 @@ public class Main {
         } else {
 
             System.out.println("invalid input..");
-            // TODO: 08.02.2021  
+            // TODO: 08.02.2021
         }
 
 
