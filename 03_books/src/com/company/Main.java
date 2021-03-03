@@ -107,8 +107,11 @@ public class Main {
 
         } else {
 
+            // terminating the program if input is unexpected.. maybe change later idk
+            // TODO: 03.03.2021  
             System.out.println("invalid input..");
-            // TODO: 08.02.2021
+            System.out.println("Terminating program...");
+            System.exit(0);
         }
 
 
@@ -128,6 +131,8 @@ public class Main {
 
             if (userMenuDecision == 1){  // adding new book to collection
 
+                // TODO: 03.03.2021 fix out of bounds exception with unexpected input 
+
                 System.out.println("What book would you like to add to your collection?");
                 System.out.println(allBooks.listBooks() + "\n");
 
@@ -137,6 +142,8 @@ public class Main {
                 System.out.println("Okay, done. \"" + allBooks.getBookTitleOnPosition(bookPositionToAdd) + "\" is now added to your collection.");
 
             } else if (userMenuDecision == 2){  // deleting book from collection
+
+                // TODO: 03.03.2021 fix out of bounds exception with unexpected input 
 
                 System.out.println("What book do you want to delete from your collection?");
                 System.out.println(user.getMyCollection().listBooks());

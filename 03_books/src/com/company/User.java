@@ -11,6 +11,9 @@ public class User {
    private int age;
    private String mostLovedGenre;
 
+   private boolean isAdmin = false;
+   private boolean isAuthor = false;
+
 
    User(String name, int age){
 
