@@ -127,33 +127,59 @@ public class Main {
             System.out.println("(4) list all books in the library");
             System.out.println("(5) exit");
 
+            if( user.getAdminStatus() == true){
+                System.out.println("(6) go to admin menu");
+            }
+
             int userMenuDecision = scanner.nextInt();
 
             if (userMenuDecision == 1){  // adding new book to collection
 
-                // TODO: 03.03.2021 fix out of bounds exception with unexpected input 
+                // TODO: 26.04.2021 change try/catch to a loop or something
 
                 System.out.println("What book would you like to add to your collection?");
                 System.out.println(allBooks.listBooks() + "\n");
 
-                int bookPositionToAdd = scanner.nextInt();
-                user.getMyCollection().addBook(allBooks.getBookOnPosition(bookPositionToAdd));
+                try {
 
-                System.out.println("Okay, done. \"" + allBooks.getBookTitleOnPosition(bookPositionToAdd) + "\" is now added to your collection.");
+                    int bookPositionToAdd = scanner.nextInt();
+                    user.getMyCollection().addBook(allBooks.getBookOnPosition(bookPositionToAdd));
+
+                    System.out.println("Okay, done. \"" + allBooks.getBookTitleOnPosition(bookPositionToAdd) + "\" is now added to your collection.");
+
+                } catch (Exception e){
+
+                    System.out.println("invalid input..");
+                    System.out.println("Terminating program...");
+                    e.printStackTrace();
+                    System.exit(0);
+
+                }
 
             } else if (userMenuDecision == 2){  // deleting book from collection
 
-                // TODO: 03.03.2021 fix out of bounds exception with unexpected input 
+                // TODO: 26.04.2021 change try/catch to a loop or something
 
                 System.out.println("What book do you want to delete from your collection?");
                 System.out.println(user.getMyCollection().listBooks());
 
-                int bookPositionToDelete = scanner.nextInt();
-                Book bookToDelete = user.getMyCollection().getBookOnPosition(bookPositionToDelete);
+                try {
 
-                user.getMyCollection().deleteBook(user.getMyCollection().getBookOnPosition(bookPositionToDelete));
+                    int bookPositionToDelete = scanner.nextInt();
+                    Book bookToDelete = user.getMyCollection().getBookOnPosition(bookPositionToDelete);
 
-                System.out.println("Okay, \"" + bookToDelete.getTitle() + "\" has been deleted from your collection." );
+                    user.getMyCollection().deleteBook(user.getMyCollection().getBookOnPosition(bookPositionToDelete));
+
+                    System.out.println("Okay, \"" + bookToDelete.getTitle() + "\" has been deleted from your collection.");
+
+                } catch (Exception e){
+
+                    System.out.println("invalid input..");
+                    System.out.println("Terminating program...");
+                    e.printStackTrace();
+                    System.exit(0);
+
+                }
 
             } else if (userMenuDecision == 3){  // list all books in collection
 
@@ -169,7 +195,12 @@ public class Main {
 
                 break;
 
-            } else {
+            } else if (userMenuDecision == 6 && user.getAdminStatus() == true){
+
+                // TODO: 26.04.2021
+                System.out.println("Here will be the admin menu...");
+
+            } else{
 
                 System.out.println("invalid input.. Please use one of the given options.");
 

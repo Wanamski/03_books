@@ -10,6 +10,7 @@ public class User {
    private String name;
    private int age;
    private String mostLovedGenre;
+   private String password;
 
    private boolean isAdmin = false;
    private boolean isAuthor = false;
@@ -59,5 +60,16 @@ public class User {
       this.mostLovedGenre = mostLovedGenre;
    }
 
+   public String getPassword() {
+      return password;
+   }
+
+   public void setPassword(String password) {
+      this.password = password;
+   }
+
+   public boolean getAdminStatus() {
+      return isAdmin;
+   }
 
 }
