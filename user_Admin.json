@@ -1,0 +1,18 @@
+{
+  "myCollection": {
+    "booksFromCollection": [
+      {
+        "title": "BOO",
+        "genre": "Horror",
+        "author": {
+          "name": "Carl Marks",
+          "age": 33
+        }
+      }
+    ]
+  },
+  "name": "Admin",
+  "age": 69,
+  "isAdmin": true,
+  "isAuthor": false
+}
