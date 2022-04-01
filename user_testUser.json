@@ -1,0 +1,26 @@
+{
+  "myCollection": {
+    "booksFromCollection": [
+      {
+        "title": "I can see dead people",
+        "genre": "Autobiography",
+        "author": {
+          "name": "Frank N. Stein",
+          "age": 69
+        }
+      },
+      {
+        "title": "My life as an alcoholic",
+        "genre": "Autobiography",
+        "author": {
+          "name": "Tony Sanchez",
+          "age": 35
+        }
+      }
+    ]
+  },
+  "name": "testUser",
+  "age": 23,
+  "isAdmin": false,
+  "isAuthor": false
+}
